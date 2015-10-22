@@ -16,12 +16,11 @@ def classes_from_osoc(infotype, term="", dept=""):
 	valid_dept_p_to_y = ["PACS", "PBHLTH", "PERSIAN", "PHDBA", "PHILOS", "PHYSED", "PHYSICS", "PLANTBI", "POLECON", "POLISH", "POLSCI", "PORTUG", "PSYCH", "PUBPOL", "PUNJABI", "RELIGST", "RHETOR", "ROMANI", "RUSSIAN", "S, SEASN", "SANSKR", "SASIAN", "SCANDIN", "SCMATHE", "SEASIAN", "SEMITIC", "SLAVIC", "SOCIOL", "SOCWEL", "SPANISH", "STAT", "STS", "SWEDISH", "TAGALG", "TAMIL", "TELUGU", "THAI", "THEATER", "TIBETAN", "TURKISH", "UGIS", "VIETNMS", "VISSCI", "VISSTD", "XMBA", "YIDDISH"]
 	valid_dept_others = ["ALL", "BIO", "CMPBIO", "CS", "L&S", "MALAY/I", "MCB", "UGBA", "BUS ADM"]
 	# Abbreviations from http://registrar.berkeley.edu/?PageID=deptabb.html
-	dept = input("Enter OSOC-Approved Department Abbreviation: ").upper()
+	while not (dept in valid_dept_a_to_c or dept in valid_dept_d_to_h or dept in valid_dept_i_to_o or dept in valid_dept_p_to_y or dept in valid_dept_others):
+		dept = input("Enter OSOC-Approved Department Abbreviation: ").upper()
+	
 	if dept == "ALL":
 		dept = valid_dept_a_to_c+valid_dept_d_to_h+valid_dept_i_to_o+valid_dept_p_to_y
-	while not (dept in valid_dept_a_to_c or dept in valid_dept_d_to_h or dept in valid_dept_i_to_o or dept in valid_dept_p_to_y or dept in valid_dept_others):
-	
-	
 	
 	dept = ["L%26S" if department=="L&S" else department for department in dept[:]]
 	listing = []
